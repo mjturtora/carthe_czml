@@ -18,108 +18,169 @@ from datetime import datetime
 from decimal import Decimal
 from czml import czml
 
-if __name__ == "__main__":
+
+def read_file(number_to_read):
     glad = []
-    i = 0
-    #carthe_name = []
-    with open('GLAD_15min_filtered\GLAD_15min_filtered.dat', 'r') as f:
+    i = 1
+    # carthe_name = []
+    with open('..\data\GLAD_15min_filtered\GLAD_15min_filtered.dat', 'r') as f:
         while True:
             line = f.readline()
+            # file ends with blank line
             if len(line) == 0:
                 break
+            # header rows start with '%'
             elif line[0] != '%':
                 if len(glad) == 0:
                     glad.append(line.split())
-                    #carthe_name.append(line.split()[0])
+                # test for new drifter name
+                elif glad[len(glad) - 1][0] != line.split()[0]:
                     #print glad[len(glad)-1][0]
-                    print glad
-                elif glad[len(glad)-1][0] != line.split()[0]:
                     i += 1
-                    if i > 1:
+                    if i > number_to_read:
                         break
                     else:
                         glad.append(line.split())
                 else:
                     glad.append(line.split())
-                    #carthe_name.append(line.split()[0])
+                    # carthe_name.append(line.split()[0])
+    return glad
 
 
-    print glad[-1]
+def build_drifter_dict(glad):
+
+    drifter_dict = {}
     cartographic_position = []
     i = 0
+    drift = glad[0][0]
     for row in glad:
-        #if i < 1000:  # limit for testing
-            #i += 1
-        cartographic_position.append(datetime.strptime(row[1] + ' ' + row[2],
-                                    "%Y-%m-%d %H:%M:%S.%f")
-        )
-        latitude = Decimal(row[3].strip("'"))
-        longitude = Decimal(row[4].strip("'"))
-        #print latitude, longitude
-        cartographic_position.append(longitude)
-        cartographic_position.append(latitude)
-        cartographic_position.append(100)
+        #print 'i, i%4 = ', i, i%4
+        if i < 100000 and drift == row[0]:
+                if (int(i) % 20) != 0:
+                    i += 1
+                    continue
+                # todo: verify proper time zone handling
+                dt = datetime.strptime(row[1] + ' ' + row[2],
+                                                               "%Y-%m-%d %H:%M:%S.%f"
+                                                               )
+                dt = dt.replace(microsecond=0)
+                cartographic_position.append(dt
+                                             )
 
-    print cartographic_position
-    '''
+                #print datetime.strftime(dt_object, "%Y-%m-%d %H:%M:%S.%f")
+                latitude = Decimal(row[3].strip("'"))  # test if this is really needed
+                longitude = Decimal(row[4].strip("'"))
+                # print latitude, longitude
+                cartographic_position.append(longitude)
+                cartographic_position.append(latitude)
+                cartographic_position.append(0)  # assume zero elevation
+                drifter_dict[row[0]] = cartographic_position
+                drift = row[0]
+                i += 1
+                print 'i= ', i
+        elif row[0] != drift:
+            # print "row[0]= ", row[0]
+            i = 1
+            cartographic_position = []
+            cartographic_position.append(datetime.strptime(row[1] + ' ' + row[2],
+                                                           "%Y-%m-%d %H:%M:%S.%f"
+                                                           )
+                                         )
+            #print datetime.strftime(dt_object, "%Y-%m-%d %H:%M:%S.%f")
+            latitude = Decimal(row[3].strip("'"))  # test if this is really needed
+            longitude = Decimal(row[4].strip("'"))
+            # print latitude, longitude
+            cartographic_position.append(longitude)
+            cartographic_position.append(latitude)
+            cartographic_position.append(0)  # assume zero elevation
+            drifter_dict[row[0]] = cartographic_position
+            drift = row[0]
+    return drifter_dict
 
+
+def get_drifter_names(glad):
     # Build list of unique names and print number
     unique_names = []
-    for n in carthe_name:
-        if n not in unique_names:
-            unique_names.append(n)
-            print n
-    print 'Number of names = ', len(unique_names)
-    # 297 individual drifters (unique names)
-    # Create datetime objects for first i rows
-    i = 0
     for row in glad:
-        if i < 100000:  # limit for testing
-            i += 1
-            dt_object = datetime.strptime(row[1] + ' ' + row[2],
-                                          "%Y-%m-%d %H:%M:%S.%f")
-            #print datetime.strftime(dt_object, "%Y-%m-%d %H:%M:%S.%f")
+        if row[0] not in unique_names:
+            unique_names.append(row[0])
+            #print row[0]
+    print 'Number of names = ', len(unique_names)
+    print unique_names
+    # 297 individual drifters (unique names)
+    return unique_names
 
-    '''
-    # build position list
-    # Create a new point
-    drifter_name = czml.Label(text='CARTHE_001')
+
+if __name__ == "__main__":
+    # input data and build dictionary
+    # argument restricts number of drifters read for testing
+    glad = read_file(number_to_read=5)
+    #print 'glad length = ', len(glad)
+    # unique_names = get_drifter_names(glad)
+
+    drifter_dict = build_drifter_dict(glad)
+    #for k in drifter_dict:
+    #    print "k, drifter_dict[k]= ", k, drifter_dict[k]
+    #print drifter_dict.keys()
+    #print drifter_dict['CARTHE_001']
+
+    #cartographic_position = build_position_list(glad)
+    #print 'cartographic_position length = ', len(cartographic_position)
+
+    # set constant properties
+    # Create a point
     point = czml.Point(pixelSize=3,
                        color={'rgba': [255, 255, 255, 255]},
                        outlineWidth=1,
                        outlineColor={'rgba': [0, 0, 0, 255]},
                        show=True
                        )
+    # Initialize a document
+    doc = czml.CZML()
+    # Create and append the document packet
+    packet1 = czml.CZMLPacket(id='document',
+                              name='CARTHE GLAD Drifter data',  # but name not implemented
+                              version='1.0')
+    doc.packets.append(packet1)
 
-    # Setup path variables
+    # Setup constant drifter properties
     sc = czml.SolidColor(color={'rgba': [0, 0, 255, 255]})
     m1 = czml.Material(solidColor=sc)
-    v1 = czml.Position(cartographicDegrees=cartographic_position)
     # test example loads position into Path. Doesn't seem to work right.
     p1 = czml.Path(show=True, width=1, leadTime=0, trailTime=650000,
                    resolution=5, material=m1)  #, position=v1)
-    print p1
 
-    # Initialize a document
-    doc = czml.CZML()
-
-    # Create and append the document packet (could add a doc id here)
-    packet1 = czml.CZMLPacket(id='document', version='1.0')
-    doc.packets.append(packet1)
+    # build position list
 
     # initialize path packet with id, then load with other items
-    # packet2 = czml.CZMLPacket(id=glad[0][0]) # drifter name for id
-    packet2 = czml.CZMLPacket(id='path')  # hard wired for now.
-    packet2.point = point
-    packet2.label = drifter_name
-    # packet2.availability = "2012-07-20T10:00:00Z/2012-10-09T15:00:00Z"
-    packet2.availability = "2012-07-20T05:15:00.143960Z/2012-10-08T05:00:22Z"
-    packet2.path = p1
-    packet2.position = v1
-    doc.packets.append(packet2)
+    # packet = czml.CZMLPacket(id=glad[0][0]) # drifter name for id
+
+
+    for drifter in drifter_dict:
+        packet = czml.CZMLPacket(id=drifter)
+        print drifter
+        print packet
+        packet.point = point
+        packet.path = p1
+
+        # drop all label stuff
+        #drifter_name = czml.Label(text=drifter[-3:], show=True)
+        #drifter_name.scale = 0.5
+        #drifter_name.fillColor = {'rgba': [255, 255, 255, 255]}
+        #drifter_name.labelStyle = "FILL_AND_OUTLINE"
+        #drifter_name.horizontalOrigin = "Left"
+        #packet.label = drifter_name
+
+        packet.availability = "2012-07-20T05:15:00.143960Z/2012-10-08T05:00:22Z"
+        drifter_positions = drifter_dict[drifter]
+        #print drifter_positions[0:10]
+        v1 = czml.Position(cartographicDegrees=drifter_positions)
+
+        packet.position = v1
+        doc.packets.append(packet)
+        del v1, packet
 
     # Write the CZML document to a file
-    filename = "example.czml"
+    filename = "..\output\example.czml"
     doc.write(filename)
-
 

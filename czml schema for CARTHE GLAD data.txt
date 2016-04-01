@@ -1,0 +1,49 @@
+// The following represents an "all-in-one" structure. Can experiment with other possibilities (like
+//     a file for each day or drifter) once this is working.
+
+// czml.py builds the file in an odd order, I might be able to fix that later.
+//         The following was ordered manually to ease understanding.
+
+[{"version": "1.0", "id": "document"},  // a single document object,
+                                        // CANNOT add "name" key because it is not
+                                        // implemented by czml.py
+
+// Need one of the following objects for each drifter:
+  
+ {"id": "CARTHE_001", 
+ 
+  "availability": "2012-07-20T05:15:00.143960Z/2012-10-08T05:00:22Z",  // hardwired at the moment, need to code it.
+
+  "label": {"text": "CARTHE_001",   // will probably drop the (constant) prefix to avoid label collisions on map
+            "show": false,          // czml.py seems to set "shows":false by default for some reason, 
+                                    // should default to true. Might report as issue.
+            "other label properties (size, font, color)":...
+           },
+           
+  "point": {"color": {"rgba": [255, 255, 255, 255]}, 
+            "pixelSize": 3, 
+            "outlineColor": {"rgba": [0, 0, 0, 255]}, 
+            "outlineWidth": 1, 
+            "show": true
+           },
+           
+  "path": {"show": true, 
+           "material": {"solidColor": {"color": {"rgba": [0, 0, 255, 255]}}}, 
+           "width": 1, 
+           "trailTime": 650000, 
+           "resolution": 5, 
+           "leadTime": 0
+           },
+           
+  "position": {"cartographicDegrees":    // [time, long, lat, elev]
+                                     ["2012-07-20T01:15:00.143960", -87.20983331673, 28.56350047144, 0.0, 
+                                      "2012-07-20T01:30:00.172800", -87.20962735704, 28.56152823991, 0.0, 
+                                      "2012-07-20T01:45:00.201530", -87.20942909462, 28.55971217602, 0.0,
+                                      ... , 
+                                      "2012-10-08T05:00:22.175994", -84.61601200697, 29.09571371662, 0.0]
+               }
+  },
+  {...next drifter...},
+  {...},
+  {...last drifter...}
+  ]
