@@ -164,7 +164,9 @@ if __name__ == "__main__":
         #packet.label = drifter_name
 
         # todo: vary availabilty by drifter or set global in doc packet
-        packet.availability = "2012-07-20T05:15:00.143960Z/2012-10-08T05:00:22Z"
+        # todo: get distribution of times
+        #packet.availability = "2012-07-20T05:15:00.143960Z/2012-10-08T05:00:22Z"
+        packet.availability = "2012-07-20T05:15:00.143960Z/2012-10-23T05:00:22Z"
         drifter_positions = drifter_dict[drifter]
         #print drifter_positions[0:10]
         v1 = czml.Position(cartographicDegrees=drifter_positions)

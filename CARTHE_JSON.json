@@ -1,0 +1,34 @@
+{
+  "catalog": [
+    {
+      "name": "GLAD",
+      "type": "group",
+      "items": [
+        {
+          "name": "CARTHE GLAD data",
+          "type": "czml",
+          "url": "https://raw.githubusercontent.com/mjturtora/carthe_czml/master/All%20197%20drifters%20through%20Oct%20at%201%20hr%20no%20labels%20or%20paths.czml",
+          "isEnabled": true,
+          "description": "CARTHE GLAD data",
+          "dataCustodian": "Frank A. La Sorte (fal42@cornell.edu)"
+        }
+      ],
+      "isOpen": true
+    }
+  ],
+  "corsDomains": [
+    "whoi.edu",
+    "corsproxy.com",
+    "programs.communications.gov.au",
+    "www.asris.csiro.au"
+  ],
+  "homeCamera": {
+    "west": -160,
+    "east": -30,
+    "north": 60,
+    "south": -20
+  },
+  "baseMapName": "Bing Maps Roads",
+  "initialViewerMode": "2d",
+  "services": []
+}
