@@ -1,4 +1,13 @@
 {
+  "homeCamera": {
+    "west": -95,
+    "east": -79,
+    "north": 30,
+    "south": 22
+  },
+  "baseMapName": "Bing Maps Roads",
+  "initialViewerMode": "2d",
+  "services": [],
   "catalog": [
     {
       "name": "CARTHE Grand LAgrangian Deployment (GLAD)",
@@ -21,14 +30,5 @@
     "corsproxy.com",
     "programs.communications.gov.au",
     "www.asris.csiro.au"
-  ],
-  "homeCamera": {
-    "west": -95,
-    "east": -79,
-    "north": 30,
-    "south": 22
-  },
-  "baseMapName": "Bing Maps Roads",
-  "initialViewerMode": "2d",
-  "services": []
+  ]
 }
