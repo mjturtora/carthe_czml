@@ -1,0 +1,461 @@
+<gmi:MI_Metadata xmlns="http://www.isotc211.org/2005/gmi" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gmi="http://www.isotc211.org/2005/gmi" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:gsr="http://www.isotc211.org/2005/gsr" xmlns:gss="http://www.isotc211.org/2005/gss" xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.isotc211.org/2005/gmi http://www.ngdc.noaa.gov/metadata/published/xsd/schema.xsd">
+    <gmd:fileIdentifier>
+        <gco:CharacterString>R1.x134.073-0004-metadata.xml</gco:CharacterString>
+    </gmd:fileIdentifier>
+    <gmd:language>
+        <gco:CharacterString>eng; USA</gco:CharacterString>
+    </gmd:language>
+    <gmd:characterSet>
+        <gmd:MD_CharacterSetCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode" codeListValue="utf8" codeSpace="004">utf8</gmd:MD_CharacterSetCode>
+    </gmd:characterSet>
+    <gmd:hierarchyLevel>
+        <gmd:MD_ScopeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode" codeListValue="dataset" codeSpace="005">dataset</gmd:MD_ScopeCode>
+    </gmd:hierarchyLevel>
+    <gmd:contact>
+        <gmd:CI_ResponsibleParty>
+            <gmd:individualName>
+                <gco:CharacterString>Ed Ryan</gco:CharacterString>
+            </gmd:individualName>
+            <gmd:organisationName>
+                <gco:CharacterString>University of Miami</gco:CharacterString>
+            </gmd:organisationName>
+            <gmd:positionName>
+                <gco:CharacterString>Senior Research Associate</gco:CharacterString>
+            </gmd:positionName>
+            <gmd:contactInfo>
+                <gmd:CI_Contact>
+                    <gmd:phone>
+                        <gmd:CI_Telephone>
+                            <gmd:voice>
+                                <gco:CharacterString>305-421-4109</gco:CharacterString>
+                            </gmd:voice>
+                            <gmd:facsimile>
+                                <gco:CharacterString />
+                            </gmd:facsimile>
+                        </gmd:CI_Telephone>
+                    </gmd:phone>
+                    <gmd:address>
+                        <gmd:CI_Address>
+                            <gmd:deliveryPoint>
+                                <gco:CharacterString>4600 Rickenbacker Causeway</gco:CharacterString>
+                            </gmd:deliveryPoint>
+                            <gmd:city>
+                                <gco:CharacterString>Miami</gco:CharacterString>
+                            </gmd:city>
+                            <gmd:administrativeArea>
+                                <gco:CharacterString>FL</gco:CharacterString>
+                            </gmd:administrativeArea>
+                            <gmd:postalCode>
+                                <gco:CharacterString>33149</gco:CharacterString>
+                            </gmd:postalCode>
+                            <gmd:country>
+                                <gco:CharacterString>USA</gco:CharacterString>
+                            </gmd:country>
+                            <gmd:electronicMailAddress>
+                                <gco:CharacterString>eryan@rsmas.miami.edu</gco:CharacterString>
+                            </gmd:electronicMailAddress>
+                        </gmd:CI_Address>
+                    </gmd:address>
+                </gmd:CI_Contact>
+            </gmd:contactInfo>
+            <gmd:role>
+                <gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="principalInvestigator" codeSpace="008">principalInvestigator</gmd:CI_RoleCode>
+            </gmd:role>
+        </gmd:CI_ResponsibleParty>
+    </gmd:contact>
+    <gmd:contact>
+        <gmd:CI_ResponsibleParty>
+            <gmd:individualName>
+                <gco:CharacterString>Bruce Lipphardt</gco:CharacterString>
+            </gmd:individualName>
+            <gmd:organisationName>
+                <gco:CharacterString>University of Delaware</gco:CharacterString>
+            </gmd:organisationName>
+            <gmd:contactInfo>
+                <gmd:CI_Contact>
+                    <gmd:phone>
+                        <gmd:CI_Telephone>
+                            <gmd:voice>
+                                <gco:CharacterString>302-831-6836</gco:CharacterString>
+                            </gmd:voice>
+                        </gmd:CI_Telephone>
+                    </gmd:phone>
+                    <gmd:address>
+                        <gmd:CI_Address>
+                            <gmd:deliveryPoint>
+                                <gco:CharacterString>
+                                    <![CDATA[College of Earth, Ocean, and Environment
+111 Robinson Hall]]>
+</gco:CharacterString>
+                            </gmd:deliveryPoint>
+                            <gmd:city>
+                                <gco:CharacterString>Newark</gco:CharacterString>
+                            </gmd:city>
+                            <gmd:administrativeArea>
+                                <gco:CharacterString>DE</gco:CharacterString>
+                            </gmd:administrativeArea>
+                            <gmd:postalCode>
+                                <gco:CharacterString>19716</gco:CharacterString>
+                            </gmd:postalCode>
+                            <gmd:country>
+                                <gco:CharacterString>USA</gco:CharacterString>
+                            </gmd:country>
+                            <gmd:electronicMailAddress>
+                                <gco:CharacterString>brucel@udel.edu</gco:CharacterString>
+                            </gmd:electronicMailAddress>
+                        </gmd:CI_Address>
+                    </gmd:address>
+                </gmd:CI_Contact>
+            </gmd:contactInfo>
+            <gmd:role>
+                <gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact" codeSpace="007">pointOfContact</gmd:CI_RoleCode>
+            </gmd:role>
+        </gmd:CI_ResponsibleParty>
+    </gmd:contact>
+    <gmd:dateStamp>
+        <gco:Date>2013-08-22</gco:Date>
+    </gmd:dateStamp>
+    <gmd:metadataStandardName>
+        <gco:CharacterString>ISO 19115-2 Geographic Information - Metadata - Part 2: Extensions for Imagery and Gridded Data</gco:CharacterString>
+    </gmd:metadataStandardName>
+    <gmd:metadataStandardVersion>
+        <gco:CharacterString>ISO 19115-2:2009(E)</gco:CharacterString>
+    </gmd:metadataStandardVersion>
+    <gmd:dataSetURI>
+        <gco:CharacterString>https://data.gulfresearchinitiative.org/metadata/R1.x134.073:0004</gco:CharacterString>
+    </gmd:dataSetURI>
+    <gmd:identificationInfo>
+        <gmd:MD_DataIdentification>
+            <gmd:citation>
+                <gmd:CI_Citation>
+                    <gmd:title>
+                        <gco:CharacterString>CARTHE: GLAD experiment CODE-style drifter trajectories (low-pass filtered, 15 minute interval records), northern Gulf of Mexico near DeSoto Canyon, July-October 2012.</gco:CharacterString>
+                    </gmd:title>
+                    <gmd:alternateTitle>
+                        <gco:CharacterString>GLAD experiment CODE-style drifter trajectories (low-pass filtered, 15 minute interval records)</gco:CharacterString>
+                    </gmd:alternateTitle>
+                    <gmd:date>
+                        <gmd:CI_Date>
+                            <gmd:date>
+                                <gco:Date>2013-08-21</gco:Date>
+                            </gmd:date>
+                            <gmd:dateType>
+                                <gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication" codeSpace="002">publication</gmd:CI_DateTypeCode>
+                            </gmd:dateType>
+                        </gmd:CI_Date>
+                    </gmd:date>
+                </gmd:CI_Citation>
+            </gmd:citation>
+            <gmd:abstract>
+                <gco:CharacterString>297 trajectories from near-surface CODE-type ocean drifters (drogued at a depth of one meter) tracked in real-time using SPOT GPS units, launched in the northern Gulf of Mexico near DeSoto Canyon in July 2012 as part of the CARTHE Grand Lagrangian Deployment (GLAD) experiment. Most of these drifters were launched as triplets (separated by roughly 100 meters at launch) in an attempt to measure multi-scale near surface dispersion. Positions are low-pass filtered (one hour cutoff period) and interpolated to uniform 15 minute intervals starting on whole hours over the period July 20 through October 22, 2012. No temperature or salinity sensors were attached to these drifters. This dataset was created by the Consortium for Advanced Research on Transport of Hydrocarbon in the Environment (CARTHE). This research was made possible by a grant from BP/The Gulf of Mexico Research Initiative.</gco:CharacterString>
+            </gmd:abstract>
+            <gmd:purpose>
+                <gco:CharacterString>Triads of CODE style drifters (initially separated by roughly 100 meteres) were launched nearly simultaneously to measure near-surface relative dispersion over scales ranging from 100 meters to 100 km.</gco:CharacterString>
+            </gmd:purpose>
+            <gmd:status>
+                <gmd:MD_ProgressCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ProgressCode" codeListValue="completed" codeSpace="001">completed</gmd:MD_ProgressCode>
+            </gmd:status>
+            <gmd:pointOfContact>
+                <gmd:CI_ResponsibleParty>
+                    <gmd:individualName>
+                        <gco:CharacterString>Bruce Lipphardt</gco:CharacterString>
+                    </gmd:individualName>
+                    <gmd:organisationName>
+                        <gco:CharacterString>University of Delaware</gco:CharacterString>
+                    </gmd:organisationName>
+                    <gmd:positionName>
+                        <gco:CharacterString>Associate Research Professor</gco:CharacterString>
+                    </gmd:positionName>
+                    <gmd:contactInfo>
+                        <gmd:CI_Contact>
+                            <gmd:phone>
+                                <gmd:CI_Telephone>
+                                    <gmd:voice>
+                                        <gco:CharacterString>302-831-6836</gco:CharacterString>
+                                    </gmd:voice>
+                                    <gmd:facsimile>
+                                        <gco:CharacterString />
+                                    </gmd:facsimile>
+                                </gmd:CI_Telephone>
+                            </gmd:phone>
+                            <gmd:address>
+                                <gmd:CI_Address>
+                                    <gmd:deliveryPoint>
+                                        <gco:CharacterString>College of Earth, Ocean, and Environment 104 Robinson Hall</gco:CharacterString>
+                                    </gmd:deliveryPoint>
+                                    <gmd:city>
+                                        <gco:CharacterString>Newark</gco:CharacterString>
+                                    </gmd:city>
+                                    <gmd:administrativeArea>
+                                        <gco:CharacterString>DE</gco:CharacterString>
+                                    </gmd:administrativeArea>
+                                    <gmd:postalCode>
+                                        <gco:CharacterString>19716</gco:CharacterString>
+                                    </gmd:postalCode>
+                                    <gmd:country>
+                                        <gco:CharacterString>USA</gco:CharacterString>
+                                    </gmd:country>
+                                    <gmd:electronicMailAddress>
+                                        <gco:CharacterString>brucel@udel.edu</gco:CharacterString>
+                                    </gmd:electronicMailAddress>
+                                </gmd:CI_Address>
+                            </gmd:address>
+                        </gmd:CI_Contact>
+                    </gmd:contactInfo>
+                    <gmd:role>
+                        <gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact" codeSpace="007">pointOfContact</gmd:CI_RoleCode>
+                    </gmd:role>
+                </gmd:CI_ResponsibleParty>
+            </gmd:pointOfContact>
+            <gmd:pointOfContact>
+                <gmd:CI_ResponsibleParty>
+                    <gmd:individualName>
+                        <gco:CharacterString>Brian Haus</gco:CharacterString>
+                    </gmd:individualName>
+                    <gmd:organisationName>
+                        <gco:CharacterString>University of Miami</gco:CharacterString>
+                    </gmd:organisationName>
+                    <gmd:contactInfo>
+                        <gmd:CI_Contact>
+                            <gmd:phone>
+                                <gmd:CI_Telephone>
+                                    <gmd:voice>
+                                        <gco:CharacterString>305-421-4932</gco:CharacterString>
+                                    </gmd:voice>
+                                </gmd:CI_Telephone>
+                            </gmd:phone>
+                            <gmd:address>
+                                <gmd:CI_Address>
+                                    <gmd:deliveryPoint>
+                                        <gco:CharacterString>
+                                            <![CDATA[4600 Rickenbacker Causeway]]>
+</gco:CharacterString>
+                                    </gmd:deliveryPoint>
+                                    <gmd:city>
+                                        <gco:CharacterString>Miami</gco:CharacterString>
+                                    </gmd:city>
+                                    <gmd:administrativeArea>
+                                        <gco:CharacterString>FL</gco:CharacterString>
+                                    </gmd:administrativeArea>
+                                    <gmd:postalCode>
+                                        <gco:CharacterString>33149</gco:CharacterString>
+                                    </gmd:postalCode>
+                                    <gmd:country>
+                                        <gco:CharacterString>USA</gco:CharacterString>
+                                    </gmd:country>
+                                    <gmd:electronicMailAddress>
+                                        <gco:CharacterString>bhaus@rsmas.miami.edu</gco:CharacterString>
+                                    </gmd:electronicMailAddress>
+                                </gmd:CI_Address>
+                            </gmd:address>
+                        </gmd:CI_Contact>
+                    </gmd:contactInfo>
+                    <gmd:role>
+                        <gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="principalInvestigator" codeSpace="008">principalInvestigator</gmd:CI_RoleCode>
+                    </gmd:role>
+                </gmd:CI_ResponsibleParty>
+            </gmd:pointOfContact>
+            <gmd:descriptiveKeywords>
+                <gmd:MD_Keywords>
+                    <gmd:keyword>
+                        <gco:CharacterString>drifters</gco:CharacterString>
+                    </gmd:keyword>
+                    <gmd:keyword>
+                        <gco:CharacterString>dispersion</gco:CharacterString>
+                    </gmd:keyword>
+                    <gmd:keyword>
+                        <gco:CharacterString>submesoscale</gco:CharacterString>
+                    </gmd:keyword>
+                    <gmd:keyword>
+                        <gco:CharacterString>surface transport</gco:CharacterString>
+                    </gmd:keyword>
+                    <gmd:keyword>
+                        <gco:CharacterString>CODE drifter</gco:CharacterString>
+                    </gmd:keyword>
+                    <gmd:keyword>
+                        <gco:CharacterString>drifter</gco:CharacterString>
+                    </gmd:keyword>
+                    <gmd:keyword>
+                        <gco:CharacterString>transport</gco:CharacterString>
+                    </gmd:keyword>
+                    <gmd:keyword>
+                        <gco:CharacterString>oil spill</gco:CharacterString>
+                    </gmd:keyword>
+                    <gmd:keyword>
+                        <gco:CharacterString>trajectories</gco:CharacterString>
+                    </gmd:keyword>
+                    <gmd:type>
+                        <gmd:MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme" codeSpace="005">theme</gmd:MD_KeywordTypeCode>
+                    </gmd:type>
+                </gmd:MD_Keywords>
+            </gmd:descriptiveKeywords>
+            <gmd:descriptiveKeywords>
+                <gmd:MD_Keywords>
+                    <gmd:keyword>
+                        <gco:CharacterString>Gulf of Mexico</gco:CharacterString>
+                    </gmd:keyword>
+                    <gmd:keyword>
+                        <gco:CharacterString>De Soto Canyon</gco:CharacterString>
+                    </gmd:keyword>
+                    <gmd:type>
+                        <gmd:MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="place" codeSpace="002">place</gmd:MD_KeywordTypeCode>
+                    </gmd:type>
+                </gmd:MD_Keywords>
+            </gmd:descriptiveKeywords>
+            <gmd:language>
+                <gco:CharacterString>eng;USA</gco:CharacterString>
+            </gmd:language>
+            <gmd:topicCategory>
+                <gmd:MD_TopicCategoryCode>oceans</gmd:MD_TopicCategoryCode>
+            </gmd:topicCategory>
+            <gmd:topicCategory>
+                <gmd:MD_TopicCategoryCode>environment</gmd:MD_TopicCategoryCode>
+            </gmd:topicCategory>
+            <gmd:extent>
+                <gmd:EX_Extent id="boundingExtent">
+                    <gmd:geographicElement>
+                        <gmd:EX_GeographicBoundingBox>
+                            <gmd:westBoundLongitude>
+                                <gco:Decimal>-95.0623</gco:Decimal>
+                            </gmd:westBoundLongitude>
+                            <gmd:eastBoundLongitude>
+                                <gco:Decimal>-82.2385</gco:Decimal>
+                            </gmd:eastBoundLongitude>
+                            <gmd:southBoundLatitude>
+                                <gco:Decimal>22.0661</gco:Decimal>
+                            </gmd:southBoundLatitude>
+                            <gmd:northBoundLatitude>
+                                <gco:Decimal>30.1222</gco:Decimal>
+                            </gmd:northBoundLatitude>
+                        </gmd:EX_GeographicBoundingBox>
+                    </gmd:geographicElement>
+                    <gmd:geographicElement>
+                        <gmd:EX_BoundingPolygon>
+                            <gmd:polygon>
+                                <gml:Polygon gml:id="Polygon" srsName="urn:ogc:def:crs:EPSG::4326">
+                                    <gml:exterior>
+                                        <gml:LinearRing>
+                                            <gml:coordinates>29.893,-85.9657 29.9802,-86.211 29.9811,-86.214 29.988,-86.238 29.9888,-86.2412 29.9895,-86.2446 29.9901,-86.248 30.0442,-86.5737 30.0445,-86.5757 30.0446,-86.5777 30.0124,-86.8027 29.9778,-86.9086 29.949,-87.0227 29.9398,-87.0778 29.8977,-87.1224 29.7845,-87.2724 29.8186,-87.4057 29.8857,-87.587 29.8769,-87.7232 29.9944,-88.0854 30.1061,-88.3134 30.1188,-88.3918 30.1191,-88.3996 30.1222,-88.6809 30.1221,-88.6853 30.1219,-88.6896 30.1215,-88.6939 30.1209,-88.6982 30.1201,-88.7025 30.082,-88.8929 30.0809,-88.8977 29.4307,-89.1912 29.1562,-88.9239 28.8062,-89.5071 29.2138,-89.4826 29.2779,-89.6297 29.3067,-89.7335 29.0533,-89.9745 29.0405,-90.4257 28.8718,-90.0254 28.8573,-90.1567 28.8355,-90.3198 28.7828,-90.6188 28.9932,-91.683 29.0319,-91.9043 29.0031,-92.4007 29.0107,-92.4068 28.8253,-93.0031 28.8232,-93.0089 28.8229,-93.0096 28.7327,-92.8876 28.4882,-92.3337 28.4406,-92.2517 28.6208,-91.8589 28.529,-91.4765 28.3457,-90.6248 28.0988,-90.7115 27.8789,-90.8575 27.7384,-90.9297 27.5131,-90.6822 26.3114,-90.0651 25.5552,-89.9307 25.637,-90.4872 27.0373,-91.9733 27.1032,-92.3767 27.607,-93.1318 27.671,-93.2614 27.6259,-93.3405 27.4744,-93.4312 26.8396,-94.2341 27.1492,-94.7161 28.141,-94.3653 28.259,-94.3739 28.2589,-94.374 28.2574,-94.3763 28.2571,-94.3768 28.2568,-94.3772 28.2528,-94.3823 28.1159,-94.5406 28.114,-94.5425 28.1119,-94.5444 27.5946,-95.009 27.5929,-95.0106 27.5911,-95.012 27.5893,-95.0134 27.5875,-95.0147 27.5857,-95.016 27.5838,-95.0172 27.582,-95.0184 27.5802,-95.0195 27.5783,-95.0207 27.5765,-95.0218 27.5747,-95.0228 27.5728,-95.0237 27.5709,-95.0245 27.569,-95.0253 27.5671,-95.0261 27.5652,-95.0267 27.5633,-95.0274 27.5615,-95.028 27.5596,-95.0285 27.449,-95.0615 27.4473,-95.0619 27.4455,-95.0622 27.4436,-95.0623 27.4417,-95.0622 27.4309,-95.0618 27.4288,-95.0617 27.4269,-95.0614 26.4844,-94.9082 26.7823,-93.8049 26.7198,-93.5743 26.803,-93.2482 26.9515,-92.7127 25.7265,-92.2834 25.3014,-92.0196 25.0105,-91.5155 24.6813,-91.1343 24.3321,-91.018 23.893,-90.642 24.067,-91.2695 23.6935,-91.3043 23.3593,-92.3688 23.345,-92.3928 23.3401,-92.3004 23.3509,-91.9987 23.4249,-91.7815 23.6368,-91.2499 23.4233,-91.2996 23.3587,-91.301 23.2515,-91.3248 23.0542,-91.479 22.6383,-91.7645 22.7848,-91.5921 23.3346,-91.1739 23.2907,-90.7833 23.2695,-90.5472 23.3383,-90.3521 23.4307,-89.8188 23.1403,-89.5814 22.6692,-88.6995 22.5824,-87.7878 22.1675,-87.0777 22.0754,-86.7571 22.0661,-86.6663 22.0672,-86.6626 22.0684,-86.6591 22.0696,-86.6558 22.1275,-86.5021 22.1283,-86.5001 22.2871,-86.3396 22.4639,-86.1741 22.6507,-85.8275 23.2543,-84.8049 23.4115,-84.6372 24.0332,-84.1116 24.5299,-83.4966 24.2857,-82.8662 24.2288,-82.4289 24.2315,-82.2385 24.4316,-83.1649 24.6959,-83.2792 25.2287,-83.9684 26.0197,-85.1509 26.2678,-84.9802 26.4406,-85.036 26.7152,-85.1428 26.7707,-84.8704 26.8126,-84.8145 27.0031,-84.5725 27.0425,-84.4541 26.7961,-84.4616 26.7886,-84.4 26.8963,-84.0853 26.9578,-83.9541 27.2019,-83.9043 27.3727,-83.9149 27.6121,-83.94 27.8806,-83.9829 28.1455,-83.9299 28.5458,-84.1643 28.7557,-84.2419 28.8762,-84.2232 28.8769,-84.2237 29.131,-84.4609 29.179,-84.5163 29.1795,-84.517 29.1897,-84.5549 28.9535,-84.7369 28.9992,-84.7559 29.0068,-84.7628 29.0333,-84.8041 29.0177,-84.9858 29.0773,-84.9474 29.1177,-84.9877 29.1185,-85.0127 29.0882,-85.0534 29.0552,-85.052 28.9537,-84.9913 28.9198,-85.0042 29.1768,-85.281 29.274,-85.4083 29.3012,-85.3878 29.3744,-85.3659 29.4413,-85.3802 29.4629,-85.331 29.4704,-85.3061 29.5524,-85.3312 29.578,-85.3415 29.5935,-85.3633 29.6477,-85.4079 29.6585,-85.4185 29.6588,-85.4191 29.884,-85.9419 29.8848,-85.9437 29.8855,-85.9455 29.8862,-85.9473 29.8924,-85.9638 29.893,-85.9657</gml:coordinates>
+                                        </gml:LinearRing>
+                                    </gml:exterior>
+                                </gml:Polygon>
+                            </gmd:polygon>
+                        </gmd:EX_BoundingPolygon>
+                    </gmd:geographicElement>
+                    <gmd:temporalElement>
+                        <gmd:EX_TemporalExtent>
+                            <gmd:extent>
+                                <gml:TimePeriod gml:id="boundingTemporalExtent">
+                                    <gml:description>ground condition</gml:description>
+                                    <gml:beginPosition>2012-07-20</gml:beginPosition>
+                                    <gml:endPosition>2012-10-22</gml:endPosition>
+                                </gml:TimePeriod>
+                            </gmd:extent>
+                        </gmd:EX_TemporalExtent>
+                    </gmd:temporalElement>
+                </gmd:EX_Extent>
+            </gmd:extent>
+            <gmd:supplementalInformation>
+                <gco:CharacterString>Column 1: drifter ID string (like CARTHE_XXX, XXX=3 digit integer) Column 2: date (yyyy-mm-dd) Column 3: time (HH:MM:SS.SS) Column 4: latitude (decimal degrees) Column 5: longitude (decimal degrees) Column 6: estimated position error (meters) Column 7: u (east-west) velocity (m/sec) Column 8: v (north-south) velocity (m/sec) Column 9: estimated velocity error (m/sec) |GLAD CODE drifter positions were reported in real-time roughly every five minutes via the Globalstar satellite network. Positions reported by the SPOT handheld GPS units inside each drifter were nominally accurate to within seven meters. Occasionally, position errors much larger than this nominal value are found. These may be due to errors in GPS baselines (due to poor satellite reception), data dropout, and, in some cases, drifters that were picked up by small boats. Each drifter record ends when the drifter was known to be picked up by a boat, when the signal was lost for more than 24 hours, or when the drifter traveled more than 80 km in a 12 hours period (implying a mean speed of 1.85 m/sec over 12 hours). For each record, positions that imply an instantaneous drifter speed greater than 3 m/sec were deleted. Also, positions that imply the drifter track rotated through more than 360 compass degrees within three hours were deleted. Next, outliers were identified as positions that were more than 100 meters away from estimated positions at the same times interpolated from a set of both past and future positions. These outliers were deleted. All valid positions were then interpolated to uniform, five-minute time intervals using spline interpolation. These five-minute records were used to compute finite difference estimates of u (east-west) and v (north-south) velocities. Finally, the five-minute position and velocity records were filtered using a Butterworth fourth-order low-pass filter with a one hour period cutoff. These low-pass filtered records were then interpolated to uniform 15-minute intervals beginning on whole hours. Crude estimates of position error are also provided for each position in the final 15-minute interval records. The error was set to 10 meters (a nominal value) for positions recorded at times for which there were no gaps in the five-minute raw data records over the previous hour. The error was increased according to the ratio of the average sample time interval for the previous 12 raw data positions to the nominal sample interval of 5 minutes, multiplied by the 10 meter nominal error value. Velocity errors were computed by dividing the sum of two consecutive position errors by the corresponding time interval.|CODE II drifter body with SPOT Satellite GPS Messenger (orange).|Raw drifter positions were low-pass filtered (one hour cutoff period) and interpolated to uniform 15 minute intervals starting on whole hours.||</gco:CharacterString>
+            </gmd:supplementalInformation>
+        </gmd:MD_DataIdentification>
+    </gmd:identificationInfo>
+    <gmd:distributionInfo>
+        <gmd:MD_Distribution>
+            <gmd:distributor>
+                <gmd:MD_Distributor>
+                    <gmd:distributorContact>
+                        <gmd:CI_ResponsibleParty>
+                            <gmd:organisationName>
+                                <gco:CharacterString>Gulf of Mexico Research Initiative Information and Data Cooperative (GRIIDC)</gco:CharacterString>
+                            </gmd:organisationName>
+                            <gmd:contactInfo>
+                                <gmd:CI_Contact>
+                                    <gmd:phone>
+                                        <gmd:CI_Telephone>
+                                            <gmd:voice>
+                                                <gco:CharacterString>361-825-3604</gco:CharacterString>
+                                            </gmd:voice>
+                                            <gmd:facsimile>
+                                                <gco:CharacterString>361-825-2050</gco:CharacterString>
+                                            </gmd:facsimile>
+                                        </gmd:CI_Telephone>
+                                    </gmd:phone>
+                                    <gmd:address>
+                                        <gmd:CI_Address>
+                                            <gmd:deliveryPoint>
+                                                <gco:CharacterString>6300 Ocean Drive Unit 5869</gco:CharacterString>
+                                            </gmd:deliveryPoint>
+                                            <gmd:city>
+                                                <gco:CharacterString>Corpus Christi</gco:CharacterString>
+                                            </gmd:city>
+                                            <gmd:administrativeArea>
+                                                <gco:CharacterString>TX</gco:CharacterString>
+                                            </gmd:administrativeArea>
+                                            <gmd:postalCode>
+                                                <gco:CharacterString>78412-5869</gco:CharacterString>
+                                            </gmd:postalCode>
+                                            <gmd:country>
+                                                <gco:CharacterString>USA</gco:CharacterString>
+                                            </gmd:country>
+                                            <gmd:electronicMailAddress>
+                                                <gco:CharacterString>griidc@gomri.org</gco:CharacterString>
+                                            </gmd:electronicMailAddress>
+                                        </gmd:CI_Address>
+                                    </gmd:address>
+                                    <gmd:onlineResource>
+                                        <gmd:CI_OnlineResource>
+                                            <gmd:linkage>
+                                                <gmd:URL>https://data.gulfresearchintitiative.org</gmd:URL>
+                                            </gmd:linkage>
+                                            <gmd:protocol>
+                                                <gco:CharacterString />
+                                            </gmd:protocol>
+                                        </gmd:CI_OnlineResource>
+                                    </gmd:onlineResource>
+                                </gmd:CI_Contact>
+                            </gmd:contactInfo>
+                            <gmd:role>
+                                <gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="distributor" codeSpace="005">distributor</gmd:CI_RoleCode>
+                            </gmd:role>
+                        </gmd:CI_ResponsibleParty>
+                    </gmd:distributorContact>
+                    <gmd:distributorFormat>
+                        <gmd:MD_Format>
+                            <gmd:name>
+                                <gco:CharacterString>ZIP archive of ASCII files</gco:CharacterString>
+                            </gmd:name>
+                            <gmd:version gco:nilReason="unknown">
+                                <gco:CharacterString />
+                            </gmd:version>
+                            <gmd:fileDecompressionTechnique>
+                                <gco:CharacterString>zip</gco:CharacterString>
+                            </gmd:fileDecompressionTechnique>
+                        </gmd:MD_Format>
+                    </gmd:distributorFormat>
+                    <gmd:distributorTransferOptions>
+                        <gmd:MD_DigitalTransferOptions>
+                            <gmd:transferSize>
+                                <gco:Real>43</gco:Real>
+                            </gmd:transferSize>
+                            <gmd:onLine>
+                                <gmd:CI_OnlineResource>
+                                    <gmd:linkage>
+                                        <gmd:URL>https://data.gulfresearchinitiative.org/data/R1.x134.073:0004</gmd:URL>
+                                    </gmd:linkage>
+                                    <gmd:protocol>
+                                        <gco:CharacterString />
+                                    </gmd:protocol>
+                                </gmd:CI_OnlineResource>
+                            </gmd:onLine>
+                        </gmd:MD_DigitalTransferOptions>
+                    </gmd:distributorTransferOptions>
+                </gmd:MD_Distributor>
+            </gmd:distributor>
+        </gmd:MD_Distribution>
+    </gmd:distributionInfo>
+</gmi:MI_Metadata>
+<!--Created with GRIIDC Metadata Editor 13.08 on 2013-08-21T07:09:12-05:00-->
+<!--Created with GRIIDC Metadata Editor 13.08 on 2013-08-21T09:07:20-05:00-->
+<!--Created with GRIIDC Metadata Editor 13.08 on 2013-08-21T16:14:28-05:00-->
+<!--Created with GRIIDC Metadata Editor 13.08 on 2013-08-22T09:15:35-05:00-->
