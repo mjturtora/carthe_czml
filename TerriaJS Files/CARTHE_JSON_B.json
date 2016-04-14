@@ -10,7 +10,8 @@
           "url": "https://raw.githubusercontent.com/mjturtora/carthe_czml/master/TerriaJS%20Files/All%20197%20drifters%20through%20Oct%20at%201%20hr%20no%20labels%20or%20paths.czml",
           "isEnabled": true,
           "description": "<p>CARTHE GLAD data http://carthe.org/glad/ </p><p>https://data.gulfresearchinitiative.org/data/R1.x134.073:0004/</p>",
-          "dataCustodian": "Dr. Brian Haus (bhaus@rsmas.miami.edu)"
+          "dataCustodian": "Dr. Brian Haus (bhaus@rsmas.miami.edu)",
+          "metadataUrl": "https://raw.githubusercontent.com/mjturtora/carthe_czml/master/TerriaJS%20Files/R1.x134.073-0004-metadata.xml"
         }
       ],
       "isOpen": true
