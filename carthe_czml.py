@@ -151,6 +151,7 @@ if __name__ == "__main__":
         packet = czml.CZMLPacket(id=drifter)
         print drifter
         print packet
+        point.name = drifter
         packet.point = point
         #packet.path = p1
 
