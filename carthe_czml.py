@@ -55,23 +55,24 @@ def build_drifter_dict(glad):
     drift = glad[0][0]
     for row in glad:
         # next two rows alter time span and interval
-        if i < 4000000 and drift == row[0]:  # very large number to read all
+        if i < 4 and drift == row[0]:  # very large number to read all (400000)
                 if (int(i) % 4) != 0:  # 4 for hourly from 15 min data
                     i += 1
                     continue
                 # todo: still ugly but better:
-                drifter_dict, cartographic_position, drift = extract_drifter_data(
-                    cartographic_position, drift, drifter_dict, row)
+                drifter_dict, cartographic_position = extract_drifter_data(
+                    cartographic_position, drifter_dict, row)
                 i += 1
         elif row[0] != drift:
             cartographic_position = []
             i = 1
-            drifter_dict, cartographic_position, drift = extract_drifter_data(
-                cartographic_position, drift, drifter_dict, row)
+            drifter_dict, cartographic_position = extract_drifter_data(
+                cartographic_position, drifter_dict, row)
+        drift = row[0]
     return drifter_dict
 
 
-def extract_drifter_data(cartographic_position, drift, drifter_dict, row):
+def extract_drifter_data(cartographic_position, drifter_dict, row):
     # todo: verify proper time zone handling
     dt = datetime.strptime(row[1] + ' ' + row[2], "%Y-%m-%d %H:%M:%S.%f")
     dt = dt.replace(microsecond=0)
@@ -84,40 +85,49 @@ def extract_drifter_data(cartographic_position, drift, drifter_dict, row):
     cartographic_position.append(latitude)
     cartographic_position.append(0)  # assume zero elevation
     drifter_dict[row[0]] = cartographic_position
-    drift = row[0]
-    return drifter_dict, cartographic_position, drift
+    return drifter_dict, cartographic_position
 
 
 def get_drifter_names(glad):
-    # Build list of unique names and print number
+    # Build list of unique names and print number (initial inventory step)
     unique_names = []
     for row in glad:
         if row[0] not in unique_names:
             unique_names.append(row[0])
     print 'Number of names = ', len(unique_names)
     print unique_names
-    # 297 individual drifters (unique names)
+    # get 297 individual drifters (unique names)
     return unique_names
 
 
 if __name__ == "__main__":
     # input data and build dictionary
     # argument restricts number of drifters read for testing
-    glad = read_file(number_to_read=300)
+    glad = read_file(number_to_read=3)  # 300 for max
     # print 'glad length = ', len(glad)
     # unique_names = get_drifter_names(glad)
 
+    # load position data into dict keyed by drifter id
     drifter_dict = build_drifter_dict(glad)
 
     # set constant properties
 
-    # Create a point
+    # Define a standard point style (could get fancy later, color groups might be fun)
     point = czml.Point(pixelSize=3,
                        color={'rgba': [255, 255, 255, 255]},
                        outlineWidth=1,
                        outlineColor={'rgba': [0, 0, 0, 255]},
                        show=True
                        )
+
+    '''
+    # test example loads position into Path. Doesn't seem to work right.
+    # ...and path awfully slow so skip it.
+    m1 = czml.Material(solidColor=czml.SolidColor(color={'rgba': [0, 0, 255, 255]}))
+    p1 = czml.Path(show=True, width=1, leadTime=0, trailTime=650000,
+                   resolution=5, material=m1)  # , position=v1)
+    '''
+
     # Initialize a document
     doc = czml.CZML()
 
@@ -127,38 +137,33 @@ if __name__ == "__main__":
                               version='1.0')
     doc.packets.append(packet1)
 
-    # Setup constant drifter properties
-    sc = czml.SolidColor(color={'rgba': [0, 0, 255, 255]})
-    m1 = czml.Material(solidColor=sc)
-    # test example loads position into Path. Doesn't seem to work right.
-    p1 = czml.Path(show=True, width=1, leadTime=0, trailTime=650000,
-                   resolution=5, material=m1)  # , position=v1)
-
-    # for each drifter, initialize path packet with id, then load with other items
+    # for each drifter, initialize packet with id, then load with other items
     for drifter in drifter_dict:
         packet = czml.CZMLPacket(id=drifter)
         print drifter
-        drifter_description = czml.Description(string=drifter)
-        packet.description = drifter_description
+
+        packet.description = czml.Description(string=drifter)
         packet.point = point
 
-        # drop all label stuff
-        # todo: figure out why label properties aren't working
-        # drifter_name = czml.Label(text=drifter[-3:], show=True)
-        # drifter_name.scale = 0.5
-        # drifter_name.fillColor = {'rgba': [255, 255, 255, 255]}
-        # drifter_name.labelStyle = "FILL_AND_OUTLINE"
-        # drifter_name.horizontalOrigin = "Left"
-        # packet.label = drifter_name
+        '''
+        # drop all label stuff but leave code for later
+        # todo: figure out why label properties aren't working, but labels are too messy
+        # with all the points anyway.
+        drifter_name = czml.Label(text=drifter[-3:], show=True)
+        drifter_name.scale = 0.5
+        drifter_name.fillColor = {'rgba': [255, 255, 255, 255]}
+        drifter_name.labelStyle = "FILL_AND_OUTLINE"
+        drifter_name.horizontalOrigin = "Left"
+        packet.label = drifter_name
+        '''
 
         # todo: vary availability by drifter or set global in doc packet
         # todo: get distribution of times
         packet.availability = "2012-07-20T05:15:00.143960Z/2012-10-23T05:00:22Z"
-        drifter_positions = drifter_dict[drifter]
-        v1 = czml.Position(cartographicDegrees=drifter_positions)
-        packet.position = v1
+        packet.position = czml.Position(cartographicDegrees=drifter_dict[drifter])
+
         doc.packets.append(packet)
-        del v1, packet
+        del packet
 
     # Write the CZML document to a file
     filename = "..\output\example.czml"
