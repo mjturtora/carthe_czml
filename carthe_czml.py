@@ -52,23 +52,23 @@ def build_drifter_dict(glad):
     drifter_dict = {}
     cartographic_position = []
     i = 0
-    drift = glad[0][0]
+    drifter = glad[0][0]
     for row in glad:
         # next two rows alter time span and interval
-        if i < 4 and drift == row[0]:  # very large number to read all (400000)
-                if (int(i) % 4) != 0:  # 4 for hourly from 15 min data
-                    i += 1
-                    continue
-                # todo: still ugly but better:
-                drifter_dict, cartographic_position = extract_drifter_data(
-                    cartographic_position, drifter_dict, row)
+        if i < 4 and drifter == row[0]:  # very large number to read all (400000)
+            if (int(i) % 4) != 0:  # 4 for hourly from 15 min data
                 i += 1
-        elif row[0] != drift:
+                continue
+            # todo: still ugly but better:
+            drifter_dict, cartographic_position = extract_drifter_data(
+                cartographic_position, drifter_dict, row)
+            i += 1
+        elif row[0] != drifter:
+            drifter = row[0]
             cartographic_position = []
             i = 1
             drifter_dict, cartographic_position = extract_drifter_data(
                 cartographic_position, drifter_dict, row)
-        drift = row[0]
     return drifter_dict
 
 
