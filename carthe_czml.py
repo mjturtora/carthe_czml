@@ -14,6 +14,9 @@
 #    License along with this library; if not, write to the Free Software
 #    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
+# run in terria with:
+# http://comt.sura.org/proxy_3001#https://raw.githubusercontent.com/mjturtora/carthe_czml/master/TerriaJS%20Files/CARTHE_JSON.json
+
 
 from datetime import datetime
 from decimal import Decimal
@@ -70,7 +73,6 @@ def build_drifter_dict(glad):
 
 def extract_drifter_data(cartographic_position, drift, drifter_dict, row):
     # todo: verify proper time zone handling
-    # todo: extract following to function
     dt = datetime.strptime(row[1] + ' ' + row[2], "%Y-%m-%d %H:%M:%S.%f")
     dt = dt.replace(microsecond=0)
     cartographic_position.append(dt)
@@ -118,6 +120,7 @@ if __name__ == "__main__":
                        )
     # Initialize a document
     doc = czml.CZML()
+
     # Create and append the document packet
     packet1 = czml.CZMLPacket(id='document',
                               name='CARTHE GLAD Drifter data',  # but name not implemented
@@ -135,7 +138,6 @@ if __name__ == "__main__":
     for drifter in drifter_dict:
         packet = czml.CZMLPacket(id=drifter)
         print drifter
-        print packet
         drifter_description = czml.Description(string=drifter)
         packet.description = drifter_description
         packet.point = point

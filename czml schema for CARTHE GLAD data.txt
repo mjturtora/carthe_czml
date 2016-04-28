@@ -12,21 +12,27 @@
   
  {"id": "CARTHE_001", 
  
-  "availability": "2012-07-20T05:15:00.143960Z/2012-10-08T05:00:22Z",  // hardwired at the moment, need to code it.
+  "availability": "2012-07-20T05:15:00.143960Z/2012-10-08T05:00:22Z",  // hardwired at the moment, might need to code it.
 
+  // "label" was deleted from the final product because there are many.
+  // Used packet "description" property instead.
   "label": {"text": "CARTHE_001",   // will probably drop the (constant) prefix to avoid label collisions on map
             "show": false,          // czml.py seems to set "shows":false by default for some reason, 
                                     // should default to true. Might report as issue.
             "other label properties (size, font, color)":...
            },
-           
+
+  "description": {"string": "CARTHE_241"}
+
   "point": {"color": {"rgba": [255, 255, 255, 255]}, 
             "pixelSize": 3, 
             "outlineColor": {"rgba": [0, 0, 0, 255]}, 
             "outlineWidth": 1, 
             "show": true
            },
-           
+
+
+  // "path" was deleted from the final product because it runs too slowly.
   "path": {"show": true, 
            "material": {"solidColor": {"color": {"rgba": [0, 0, 255, 255]}}}, 
            "width": 1, 
